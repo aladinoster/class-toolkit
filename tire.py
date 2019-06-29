@@ -6,5 +6,7 @@ class Tire(Circle):
 
     def perimeter(self):
         """ Circumference corrected for rubber"""
-        return Circle.perimeter(self) * 1.25  # a problem if exposing radius
+        return Circle.__perimeter(self) * 1.25  # a problem if exposing radius
+
+    __perimeter = perimeter
 
