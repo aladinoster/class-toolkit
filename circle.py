@@ -4,8 +4,11 @@
 """
 import math
 
+
 class Circle(object):
     "An advanced circle analytic toolkit"
+
+    version = "0.1"
 
     def __init__(self, radius):
         self.radius = radius
