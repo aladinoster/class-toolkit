@@ -8,10 +8,18 @@ import math
 class Circle(object):
     "An advanced circle analytic toolkit"
 
-    version = "0.4"
+    version = "0.5"
 
     def __init__(self, radius):
         self.radius = radius
+
+    @property
+    def radius(self):
+        return self.__perimeter() / math.pi / 2.0
+
+    @radius.setter
+    def radius(self, radius):
+        self.diameter = radius * 2
 
     def area(self):
         p = self.__perimeter()  # This calls only circle's perimeter
