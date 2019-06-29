@@ -27,3 +27,4 @@ class TestRandomCircle(unittest.TestCase):
         print(f"is {avg_area:.1f}")
         avg_area_calculated = sum([math.pi * r ** 2 for r in radius])/n
         self.assertEqual(avg_area, avg_area_calculated)
+
