@@ -3,5 +3,5 @@
 
 """
 
-class Circle:
+class Circle(object):  # A new style class
     "An advanced circle analytic toolkit"
