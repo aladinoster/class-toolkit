@@ -8,7 +8,7 @@ import math
 class Circle(object):
     "An advanced circle analytic toolkit"
 
-    version = "0.3"
+    version = "0.4"
 
     def __init__(self, radius):
         self.radius = radius
@@ -21,6 +21,7 @@ class Circle(object):
 
     @classmethod
     def frombbd(cls, bbd):
+        "Constructs the circle from the bounding box"
         radius = bbd / 2.0 / math.sqrt(2.0)
-        return Circle(radius)
+        return cls(radius)  # This can now be used by tire properly
 
