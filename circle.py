@@ -14,10 +14,14 @@ class Circle(object):
         self.radius = radius
 
     def area(self):
-        return math.pi * self.radius ** 2.0
+        p = self.__perimeter()  # This calls only circle's perimeter
+        r = p / math.pi / 2.0
+        return math.pi * r ** 2.0
 
     def perimeter(self):
         return 2.0 * math.pi * self.radius
+
+    __perimeter = perimeter  # This creates _Circle_perimeter
 
     @classmethod
     def frombbd(cls, bbd):
