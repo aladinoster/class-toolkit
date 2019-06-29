@@ -52,3 +52,17 @@ class TestTires(unittest.TestCase):
         print(f"and an odometer perimeter of {t.perimeter()}")
         self.assertEqual(t.perimeter(), 22 * math.pi * 2 * 1.25)
 
+
+class TestConstructor(unittest.TestCase):
+    def test_new_constructor(self):
+        def bbd_to_radius(bbd):
+            return bbd / 2.0 / math.sqrt(2.0)  # from bounding box to radius
+
+        bbd = 25.1
+        c = Circle(bbd_to_radius(bbd))
+        print(f"A circle with bbd {bbd}")
+        print(f"has a radius ouf {c.radius}")
+        print(f"an area of {c.area()} and perimeter {c.perimeter()}")
+        c_new = Circle.frombbd(bbd)
+        self.assertEqual(c_new.radius, c.radius)
+
