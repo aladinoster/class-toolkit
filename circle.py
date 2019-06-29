@@ -25,3 +25,7 @@ class Circle(object):
         radius = bbd / 2.0 / math.sqrt(2.0)
         return cls(radius)  # This can now be used by tire properly
 
+    @staticmethod
+    def angle_to_grade(angle):
+        "Convert angle to in degree to percentage grade"
+        return math.tan(math.radians(angle)) * 100.0
