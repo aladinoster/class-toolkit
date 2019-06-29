@@ -8,7 +8,10 @@ import math
 class Circle(object):
     "An advanced circle analytic toolkit"
 
-    version = "0.5"
+    version = "0.6"
+
+    # flyweight pattern
+    __slots__ = ["diameter"]  # No dict, no adding attributes (impr. efficiency)
 
     def __init__(self, radius):
         self.radius = radius

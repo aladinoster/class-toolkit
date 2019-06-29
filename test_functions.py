@@ -30,6 +30,18 @@ class TestRandomCircle(unittest.TestCase):
         avg_area_calculated = sum([math.pi * r ** 2 for r in radius]) / n
         self.assertEqual(avg_area, avg_area_calculated)
 
+    def test_large_amount_of_circles(self):
+        seed(8675309)
+        print(f"Using Circuituous(tm) version {Circle.version}")
+        n = 1000
+        radius = [random() for _ in range(n)]
+        circles = [Circle(r) for r in radius]
+        print(f"The average area of {n} random circles is")
+        avg_area = sum([c.area() for c in circles]) / n
+        print(f"is {avg_area:.1f}")
+        avg_area_calculated = sum([math.pi * r ** 2 for r in radius]) / n
+        self.assertEqual(avg_area, avg_area_calculated)
+
 
 class TestExposureParameters(unittest.TestCase):
     def test_modify_radius_after_creation(self):
