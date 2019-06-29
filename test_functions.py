@@ -1,6 +1,8 @@
 import unittest
 
 from circle import Circle
+from tire import Tire
+
 import math
 from random import random, seed
 
@@ -29,7 +31,6 @@ class TestRandomCircle(unittest.TestCase):
         self.assertEqual(avg_area, avg_area_calculated)
 
 
-
 class TestExposureParameters(unittest.TestCase):
     def test_modify_radius_after_creation(self):
         cuts = [0.1, 0.7, 0.8]
@@ -41,3 +42,13 @@ class TestExposureParameters(unittest.TestCase):
             c.radius *= 1.1
             print(f"and a warm area of {c.area()}")
             self.assertEqual(c.area(), math.pi * c.radius ** 2)
+
+
+class TestTires(unittest.TestCase):
+    def test_new_usage_circles(self):
+        t = Tire(22)
+        print(f"A tire of radius {t.radius}")
+        print(f"has an inner area of {t.area()}")
+        print(f"and an odometer perimeter of {t.perimeter()}")
+        self.assertEqual(t.perimeter(), 22 * math.pi * 2 * 1.25)
+
